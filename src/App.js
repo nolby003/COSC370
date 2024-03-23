@@ -1,63 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import React, {useState} from 'react';
 import axios from 'axios';
 
-require("dotenv").config();
+//require("dotenv").config();
 
 function App() {
-  // //const [name, setName] = useState('')
-  // const [data, setData] = useState(null);
 
-  // //const [formData, setFormData] = useState('');
-
-  const APIkey = process.env.APIKEY;
-  //const APIkey = '42d975d7005345e99c301800cd427463'
-
-  // // const handleClick = async () => {
-  // //   try {
-  // //     const data = await (await fetch(`https://api.rawg.io/api/games?key=${APIkey}&search=${name}`)).json()
-  // //       setData(data)
-  // //   } catch (err) {
-  // //       console.log(err.message)
-  // //   }
-  // // };
-
-  // const handleSubmit=(e) =>
-  // {
-  //   try
-  //   {
-  //     e.preventDefault();
-  //     const name=e.target.name.value;
-  //     const data = fetch(`https://api.rawg.io/api/games?key=${APIkey}&search=${name}`).json()
-  //     setData(data)
-  //     .then(response => response.json())
-  //     const title = document.createElement('p');
-  //     title.innerText = data.results.slug;
-  //   }
-  //   catch (err)
-  //   {
-  //       console.log(err.message)
-  //   }
-  // };
-
-  // return (
-  //     <div className="App">
-  //         <header className="App-header">
-  //             Enter a game title to search:
-  //                 <form onSubmit={handleSubmit}>
-  //                 <input
-  //                 type="text"
-  //                 placeholder='Enter a title name'
-  //                 name="name"
-  //                 />
-  //                 <button>Check Game</button>
-  //                 </form>
-  //                 <h1>Results</h1>
-  //                 <p></p>
-  //         </header>
-  //     </div>
-  // );
+  const Apikey = '42d975d7005345e99c301800cd427463'
 
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -70,7 +19,7 @@ function App() {
     event.preventDefault();
 
     try {
-      const response = await axios.get(`https://api.rawg.io/api/games?key=${APIkey}&search=${searchQuery}`);
+      const response = await axios.get(`https://api.rawg.io/api/games?key=${Apikey}&search=${searchQuery}`);
       setSearchResults(response.data.results);
       console.table(response)
     } catch (error) {
@@ -100,7 +49,7 @@ function App() {
             {searchResults.map((result) => (
             <tr key={result.id}>
               <td>
-                <p><img src={result.background_image}></img></p>
+                <p><img alt='' src={result.background_image}></img></p>
                 <p>name: {result.name} | platform: {result.platforms.length > 0 ? result.platforms[0].platform.name : 'N/A' } | genre: {result.genres.length > 0 ? result.genres[0].name : 'N/A' }</p>
                 <p>rating: {result.rating} | score: {result.score}</p>
                 <p>released: {result.released}</p>
