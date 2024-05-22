@@ -1,7 +1,11 @@
 import './App.css';
 import React, {useState} from 'react';
-import Select from 'react-select';
 import axios from 'axios';
+
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 //require("dotenv").config();
 
@@ -18,10 +22,6 @@ function App() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-  const platform_options = [
-    { value: '', label: 'PC' }
-    ]
 
     try {
       const response = await axios.get(`https://api.rawg.io/api/games?key=${Apikey}&search=${searchQuery}&platforms=${platform_options}`);
@@ -44,7 +44,31 @@ function App() {
           onChange={handleInputChange}
           placeholder="Enter name to search"
         />
-        <Select options={platform_options} />
+        <Navbar variant="dark" bg="dark" expand="lg">
+      <Container fluid>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="navbar-dark-example" />
+        <Navbar.Collapse id="navbar-dark-example">
+          <Nav>
+            <NavDropdown
+              id="nav-dropdown-dark-example"
+              title="Choose Platform"
+              menuVariant="dark"
+            >
+              <NavDropdown.Item href="#action/3.1">PC</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">PS5</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
         <button type="submit">Search</button>
       </form>
       {searchResults.length > 0 && (
