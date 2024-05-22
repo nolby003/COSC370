@@ -2,11 +2,6 @@ import './App.css';
 import React, {useState} from 'react';
 import axios from 'axios';
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
 //require("dotenv").config();
 
 function App() {
@@ -44,31 +39,6 @@ function App() {
           onChange={handleInputChange}
           placeholder="Enter name to search"
         />
-        <Navbar variant="dark" bg="dark" expand="lg">
-      <Container fluid>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbar-dark-example" />
-        <Navbar.Collapse id="navbar-dark-example">
-          <Nav>
-            <NavDropdown
-              id="nav-dropdown-dark-example"
-              title="Choose Platform"
-              menuVariant="dark"
-            >
-              <NavDropdown.Item href="#action/3.1">PC</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">PS5</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
         <button type="submit">Search</button>
       </form>
       {searchResults.length > 0 && (
