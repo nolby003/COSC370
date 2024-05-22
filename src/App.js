@@ -19,7 +19,7 @@ function App() {
     event.preventDefault();
 
     try {
-      const response = await axios.get(`https://api.rawg.io/api/games?key=${Apikey}&search=${searchQuery}&platforms=${platform_options}`);
+      const response = await axios.get(`https://api.rawg.io/api/games?key=${Apikey}&search=${searchQuery}`);
       setSearchResults(response.data.results);
       console.table(response)
     } catch (error) {
