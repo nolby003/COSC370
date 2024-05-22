@@ -1,6 +1,5 @@
 import './App.css';
 import React, {useState} from 'react';
-import ReactSelect from 'react-select';
 import axios from 'axios';
 
 //require("dotenv").config();
@@ -19,12 +18,8 @@ function App() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-  const platform_options = [
-    { value: 'PC', label: 'PC' },
-    ]
-
     try {
-      const response = await axios.get(`https://api.rawg.io/api/games?key=${Apikey}&search=${searchQuery}&platforms=${platform_options}`);
+      const response = await axios.get(`https://api.rawg.io/api/games?key=${Apikey}&search=${searchQuery}&platforms=${this.state.platforms}`);
       setSearchResults(response.data.results);
       console.table(response)
     } catch (error) {
@@ -44,7 +39,10 @@ function App() {
           onChange={handleInputChange}
           placeholder="Enter name to search"
         />
-        <Select options={platform_options} />
+        <select value={this.state.platforms} onChange={this.handleSubmit}>
+            <option name="pc">PC</option>
+            <option name="ps5">PS5</option>
+        </select>
         <button type="submit">Search</button>
       </form>
       {searchResults.length > 0 && (
