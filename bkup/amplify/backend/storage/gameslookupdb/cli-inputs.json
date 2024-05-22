@@ -1,0 +1,14 @@
+{
+  "resourceName": "gameslookupdb",
+  "tableName": "gameslookupdb",
+  "partitionKey": {
+    "fieldName": "name",
+    "fieldType": "string"
+  },
+  "sortKey": {
+    "fieldName": "platform",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

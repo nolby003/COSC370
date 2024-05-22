@@ -1,0 +1,21 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-gameslookup-staging-205147-authRole",
+      "UnauthRoleArn": "arn:aws:iam::244660449071:role/amplify-gameslookup-staging-205147-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::244660449071:role/amplify-gameslookup-staging-205147-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-gameslookup-staging-205147-deployment",
+      "UnauthRoleName": "amplify-gameslookup-staging-205147-unauthRole",
+      "StackName": "amplify-gameslookup-staging-205147",
+      "StackId": "arn:aws:cloudformation:us-east-1:244660449071:stack/amplify-gameslookup-staging-205147/acbc2910-e244-11ee-8093-0a7858a799cf",
+      "AmplifyAppId": "d32q7vi9mu1p5m",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-gameslookup-staging-205147-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "auth": {
+        "GamesLookup": {}
+      }
+    }
+  }
+}
