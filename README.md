@@ -1,4 +1,25 @@
-# Getting Started with Create React App
+# Games lookup
+
+This project was developed as part of my University course User Experience and Interaction Design (COSC370)
+It consisted of building a mobile/web application through the core principles of Human Centred Design (HCI).
+
+Through my experience and skills as a Full-stack React developer, I built a React/NodeJS web application to search for Video Game titles through a single page.
+
+### Development
+
+* VSC for the IDE
+* React/NodeJS
+* axios library was used for API fetch
+
+### Deployment
+
+Through my present Data consulting work, my experience with AWS, I deployed this web application to AWS Amplify.
+
+### UAT
+
+All UAT was performed by myself and others as part of the overall course requirements to capture UI/UX development.
+
+### General React stuff below
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
