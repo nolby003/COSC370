@@ -1,6 +1,6 @@
 # Games lookup
 
-This project was developed as part of my University course User Experience and Interaction Design (COSC370)
+This project was developed as part of my University course User Experience and Interaction Design (COSC370) for my degree in BcompSci.
 It consisted of building a mobile/web application through the core principles of Human Centred Design (HCI).
 
 Through my experience and skills as a Full-stack React developer, I built a React/NodeJS web application to search for Video Game titles through a single page.
